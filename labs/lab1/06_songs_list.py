@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 # Есть список песен группы Depeche Mode со временем звучания с точностью до долей минут
 # Точность указывается в функции round(a, b)
 # где a, это число которое надо округлить, а b количество знаков после запятой
 # более подробно про функцию round смотрите в документации https://docs.python.org/3/search.html?q=round
-
 violator_songs_list = [
     ['World in My Eyes', 4.86],
     ['Sweetest Perfection', 4.43],
@@ -17,14 +15,26 @@ violator_songs_list = [
     ['Blue Dress', 4.29],
     ['Clean', 5.83],
 ]
-
 # распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean' в формате
 #   Три песни звучат ХХХ.XX минут
 # Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
 # Лучше заранее вычислить необходимое, а затем в print(xxx, yyy, zzz)
-
 # TODO здесь ваш код
-
+# распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean'
+# Находим время для каждой песни
+halo_time = 0
+enjoy_time = 0
+clean_time = 0
+for song in violator_songs_list:
+    if song[0] == 'Halo':
+        halo_time = song[1]
+    elif song[0] == 'Enjoy the Silence':
+        enjoy_time = song[1]
+    elif song[0] == 'Clean':
+        clean_time = song[1]
+# Суммируем и округляем до 2 знаков
+total_time = round(halo_time + enjoy_time + clean_time, 2)
+print(f'Три песни звучат {total_time} минут')
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
     'World in My Eyes': 4.76,
@@ -37,8 +47,12 @@ violator_songs_dict = {
     'Blue Dress': 4.18,
     'Clean': 5.68,
 }
-
 # распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
 #   А другие три песни звучат ХХХ минут
-
 # TODO здесь ваш код
+sweet_time = violator_songs_dict['Sweetest Perfection']
+policy_time = violator_songs_dict['Policy of Truth']
+blue_time = violator_songs_dict['Blue Dress']
+# Суммируем и округляем до 2 знаков
+other_total = round(sweet_time + policy_time + blue_time, 2)
+print(f'А другие три песни звучат {other_total} минут')
