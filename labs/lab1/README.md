@@ -70,7 +70,10 @@
       result = 1 * 2 + 3 + 4 * 5
       print(result)  
 Результат
+
 <img width="277" height="70" alt="image" src="https://github.com/user-attachments/assets/0c31ce6a-be3f-45b6-9ac8-9ea866301f11" />
+
+Описание проделанной работы
 
 
 
