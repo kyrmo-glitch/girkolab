@@ -16,7 +16,7 @@ zoo.extend(birds)
 print(zoo)
 
 # уберите слона
-#  и выведите список на консоль
+# и выведите список на консоль
 zoo.remove('elephant')
 print(zoo)
 

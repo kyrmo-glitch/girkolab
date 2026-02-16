@@ -22,19 +22,19 @@ violator_songs_list = [
 # TODO здесь ваш код
 # распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean'
 # Находим время для каждой песни
-halo_time = 0
-enjoy_time = 0
-clean_time = 0
+time1 = 0
+time2 = 0
+time3 = 0
 for song in violator_songs_list:
     if song[0] == 'Halo':
-        halo_time = song[1]
+        time1 = song[1]
     elif song[0] == 'Enjoy the Silence':
-        enjoy_time = song[1]
+        time2 = song[1]
     elif song[0] == 'Clean':
-        clean_time = song[1]
+        time3 = song[1]
 # Суммируем и округляем до 2 знаков
-total_time = round(halo_time + enjoy_time + clean_time, 2)
-print(f'Три песни звучат {total_time} минут')
+total1 = round(time1 + time2 + time3, 2)
+print(f'Три песни звучат {total1} минут')
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
     'World in My Eyes': 4.76,
@@ -50,9 +50,9 @@ violator_songs_dict = {
 # распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
 #   А другие три песни звучат ХХХ минут
 # TODO здесь ваш код
-sweet_time = violator_songs_dict['Sweetest Perfection']
-policy_time = violator_songs_dict['Policy of Truth']
-blue_time = violator_songs_dict['Blue Dress']
+time3 = violator_songs_dict['Sweetest Perfection']
+time4 = violator_songs_dict['Policy of Truth']
+time5 = violator_songs_dict['Blue Dress']
 # Суммируем и округляем до 2 знаков
-other_total = round(sweet_time + policy_time + blue_time, 2)
-print(f'Три песни звучат {other_total} минут')
+total2 = round(time3 + time4 + time5, 2)
+print(f'Три песни звучат {total2} минут')
