@@ -276,6 +276,7 @@
       # Точность указывается в функции round(a, b)
       # где a, это число которое надо округлить, а b количество знаков после запятой
       # более подробно про функцию round смотрите в документации https://docs.python.org/3/search.html?q=round
+      
       violator_songs_list = [
           ['World in My Eyes', 4.86],
           ['Sweetest Perfection', 4.43],
@@ -287,6 +288,7 @@
           ['Blue Dress', 4.29],
           ['Clean', 5.83],
       ]
+      
       # распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean' в формате
       #   Три песни звучат ХХХ.XX минут
       # Обратите внимание, что делать много вычислений внутри print() - плохой стиль.
@@ -294,9 +296,11 @@
       # TODO здесь ваш код
       # распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean'
       # Находим время для каждой песни
+      
       time1 = 0
       time2 = 0
       time3 = 0
+      
       for song in violator_songs_list:
           if song[0] == 'Halo':
               time1 = song[1]
@@ -304,10 +308,15 @@
               time2 = song[1]
           elif song[0] == 'Clean':
               time3 = song[1]
+      
       # Суммируем и округляем до 2 знаков
+      
       total1 = round(time1 + time2 + time3, 2)
+      
       print(f'Три песни звучат {total1} минут')
+      
       # Есть словарь песен группы Depeche Mode
+      
       violator_songs_dict = {
           'World in My Eyes': 4.76,
           'Sweetest Perfection': 4.43,
@@ -319,13 +328,17 @@
           'Blue Dress': 4.18,
           'Clean': 5.68,
       }
+      
       # распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
       #   А другие три песни звучат ХХХ минут
       # TODO здесь ваш код
+      
       time3 = violator_songs_dict['Sweetest Perfection']
       time4 = violator_songs_dict['Policy of Truth']
       time5 = violator_songs_dict['Blue Dress']
+      
       # Суммируем и округляем до 2 знаков
+      
       total2 = round(time3 + time4 + time5, 2)
       print(f'Три песни звучат {total2} минут')
 **Результат**
@@ -374,6 +387,7 @@
       #   Требуется задать конкретные индексы, например secret_message[3][12:23:4]
       #   4е и 5е слова нужно получить за 1 срез
       #   Если нужны вычисления и разные пробы - делайте это в консоли пайтона, тут нужен только результат
+      
       
       # TODO вывести расшифрованное сообщение
       word1 = secret_message[0][3]                     
@@ -436,13 +450,11 @@
 
 ---
 ### 09_shopping
-Задание
+**Задание**
 
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
-      
       # Есть словарь магазинов с распродажами
-      
       shops = {
           'ашан':
               [
@@ -468,9 +480,6 @@
       }
       
       # Создайте словарь цен на продкты следующего вида (писать прямо в коде)
-      #!/usr/bin/env python3
-      # -*- coding: utf-8 -*-
-      
       shops = {
           'ашан': [
               {'name': 'печенье', 'price': 10.99},
@@ -493,37 +502,35 @@
       }
       
       # Список продуктов
+     
       products = ['печенье', 'конфеты', 'карамель', 'пирожное']
-      
       for product in products:
-          print(f"{product}:")
-          
-    # Собираем цены
-    prices = []
-    for shop_name in shops:
-        for item in shops[shop_name]:
-            if item['name'] == product:
-                prices.append([shop_name, item['price']])
+          print(f"{product}:")   
+          prices = []
+          for shopname in shops:
+              for item in shops[shopname]:
+                  if item['name'] == product:
+                      prices.append([shopname, item['price']])
     
-    # Сортировка пузырьком (или просто встроенная сортировка по первому элементу)
-    for i in range(len(prices)):
-        for j in range(i + 1, len(prices)):
-            if prices[i][1] > prices[j][1]:
-                prices[i], prices[j] = prices[j], prices[i]
+          for i in range(len(prices)):
+              for j in range(i + 1, len(prices)):
+                  if prices[i][1] > prices[j][1]:
+                      prices[i], prices[j] = prices[j], prices[i]
     
     # Выводим два первых
-    for i in range(2):
-        print(f"  {prices[i][0]}: {prices[i][1]} руб.")
-    print()
-Результат
+    
+          for i in range(2):
+              print(f"  {prices[i][0]}: {prices[i][1]} руб.")
+          print()
+**Результат**
 
 <img width="1321" height="346" alt="image" src="https://github.com/user-attachments/assets/827edcf8-16eb-48c5-b0ac-2f0d628464c8" />
 
-Описание проделанной работы
+**Описание проделанной работы**
 
 ---
 ### 10_store
-Задание
+**Задание**
 
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
@@ -608,11 +615,11 @@
       chair_total_qty = chair1_qty + chair2_qty + chair3_qty
       chair_total_cost = chair1_qty * chair1_price + chair2_qty * chair2_price + chair3_qty * chair3_price
       print(f'Стул - {chair_total_qty} шт, стоимость {chair_total_cost} руб')
-Результат
+**Результат**
 
 <img width="1280" height="107" alt="image" src="https://github.com/user-attachments/assets/5e750f7d-8092-4bc2-b1f4-ad421d362cda" />
 
-Описание проделанной работы
+**Описание проделанной работы**
 
 ---
 ### Подсказка для git
