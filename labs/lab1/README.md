@@ -71,7 +71,7 @@
       print(result)  
 Результат
 
-<img width="277" height="70" alt="image" src="https://github.com/user-attachments/assets/0c31ce6a-be3f-45b6-9ac8-9ea866301f11" />
+<img width="1133" height="63" alt="image" src="https://github.com/user-attachments/assets/5650f912-c082-47a9-9dd8-e94cc6e8f5b2" />
 
 Описание проделанной работы
 
