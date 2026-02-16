@@ -55,4 +55,4 @@ policy_time = violator_songs_dict['Policy of Truth']
 blue_time = violator_songs_dict['Blue Dress']
 # Суммируем и округляем до 2 знаков
 other_total = round(sweet_time + policy_time + blue_time, 2)
-print(f'А другие три песни звучат {other_total} минут')
+print(f'Три песни звучат {other_total} минут')

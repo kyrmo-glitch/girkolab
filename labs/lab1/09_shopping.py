@@ -60,12 +60,11 @@ for product in products:
     
     # Собираем цены
     prices = []
-    for shop_name in shops:
-        for item in shops[shop_name]:
+    for shopname in shops:
+        for item in shops[shopname]:
             if item['name'] == product:
-                prices.append([shop_name, item['price']])
+                prices.append([shopname, item['price']])
     
-    # Сортировка пузырьком (или просто встроенная сортировка по первому элементу)
     for i in range(len(prices)):
         for j in range(i + 1, len(prices)):
             if prices[i][1] > prices[j][1]:

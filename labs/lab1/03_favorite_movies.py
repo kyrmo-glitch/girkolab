@@ -17,13 +17,13 @@ my_favorite_movies = 'Терминатор, Пятый элемент, Ават�
 
 # TODO здесь ваш код
 #   первый фильм
-print(my_favorite_movies[:13])
+print(my_favorite_movies[:10])
 
 #   последний
-print(my_favorite_movies[-17:])
+print(my_favorite_movies[-15:])
 
 #   второй
-print(my_favorite_movies[16:30])
+print(my_favorite_movies[12:25])
 
 #   второй с конца
-print(my_favorite_movies[37:43])
+print(my_favorite_movies[-22:-17])
