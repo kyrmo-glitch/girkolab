@@ -2,10 +2,9 @@
 #### 00_distance
 Задание
 
-      ```python
       
       #!/usr/bin/env python3
-      # -*- coding: utf-8 -*-
+      <span style="color:green"># -*- coding: utf-8 -*-</span>
       sites = {
           'Moscow': (550, 370),
           'London': (510, 510),
