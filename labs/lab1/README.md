@@ -23,3 +23,12 @@
 Результат
 
 <img width="1207" height="53" alt="image" src="https://github.com/user-attachments/assets/e35dc55d-054c-4066-aa04-64ae004d80bf" />
+
+Описание проделанной работы
+
+
+
+
+#### 01_circle
+
+
