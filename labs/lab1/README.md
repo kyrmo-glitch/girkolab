@@ -81,7 +81,7 @@
 <img width="1086" height="91" alt="image" src="https://github.com/user-attachments/assets/ce98434c-0f2b-43d4-a099-f582d0da2cf2" />
 
 Описание проделанной работы
-
+---
 #### 02_operations
 Задание
 
@@ -106,7 +106,7 @@
 <img width="1133" height="63" alt="image" src="https://github.com/user-attachments/assets/5650f912-c082-47a9-9dd8-e94cc6e8f5b2" />
 
 Описание проделанной работы
-
+---
 #### 03_favorite_movies
 Задание
 
