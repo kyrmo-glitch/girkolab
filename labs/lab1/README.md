@@ -261,14 +261,14 @@
 **Описание проделанной работы**
 
 Просто использовал функции:
--insert(позиция, элемент) — вставка элемента на указанную позицию.
--extend(список) — добавление нескольких элементов в конец списка.
--remove(элемент) — удаление элемента по значению.
--index(элемент) — получение индекса элемента по значению.
+- insert(позиция, элемент) — вставка элемента на указанную позицию.
+- extend(список) — добавление нескольких элементов в конец списка.
+- remove(элемент) — удаление элемента по значению.
+- index(элемент) — получение индекса элемента по значению.
 
 ---
 ### 06_songs_list
-Задание
+**Задание**
 
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
@@ -294,19 +294,19 @@
       # TODO здесь ваш код
       # распечатайте общее время звучания трех песен: 'Halo', 'Enjoy the Silence' и 'Clean'
       # Находим время для каждой песни
-      halo_time = 0
-      enjoy_time = 0
-      clean_time = 0
+      time1 = 0
+      time2 = 0
+      time3 = 0
       for song in violator_songs_list:
           if song[0] == 'Halo':
-              halo_time = song[1]
+              time1 = song[1]
           elif song[0] == 'Enjoy the Silence':
-              enjoy_time = song[1]
+              time2 = song[1]
           elif song[0] == 'Clean':
-              clean_time = song[1]
+              time3 = song[1]
       # Суммируем и округляем до 2 знаков
-      total_time = round(halo_time + enjoy_time + clean_time, 2)
-      print(f'Три песни звучат {total_time} минут')
+      total1 = round(time1 + time2 + time3, 2)
+      print(f'Три песни звучат {total1} минут')
       # Есть словарь песен группы Depeche Mode
       violator_songs_dict = {
           'World in My Eyes': 4.76,
@@ -322,17 +322,20 @@
       # распечатайте общее время звучания трех песен: 'Sweetest Perfection', 'Policy of Truth' и 'Blue Dress'
       #   А другие три песни звучат ХХХ минут
       # TODO здесь ваш код
-      sweet_time = violator_songs_dict['Sweetest Perfection']
-      policy_time = violator_songs_dict['Policy of Truth']
-      blue_time = violator_songs_dict['Blue Dress']
+      time3 = violator_songs_dict['Sweetest Perfection']
+      time4 = violator_songs_dict['Policy of Truth']
+      time5 = violator_songs_dict['Blue Dress']
       # Суммируем и округляем до 2 знаков
-      other_total = round(sweet_time + policy_time + blue_time, 2)
-      print(f'А другие три песни звучат {other_total} минут')
-Результат
+      total2 = round(time3 + time4 + time5, 2)
+      print(f'Три песни звучат {total2} минут')
+**Результат**
 
 <img width="1314" height="60" alt="image" src="https://github.com/user-attachments/assets/92ab7aa2-946e-4189-9c89-f2b82e0bde02" />
 
-Описание проделанной работы
+**Описание проделанной работы**
+
+1. Создал 3 переменные для хранения времени звучание одно из трех песен. Перебираю все песни с помощью цикла for. В цикле происходит проверка по названию, если название нужно значение song[1](длительность песни) сохраняется в переменные time1, time2, time3. Вывожу сумму с помощью f строки.
+2. Использовал прямое обращение к элементам словаря по названию для получения длительности. Вывел сумму с помощью f строки.
 
 ----
 ### 07_secret
