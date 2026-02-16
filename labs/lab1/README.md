@@ -306,6 +306,281 @@
 
 ----
 ### 07_secret
+Задание 
+
+      #!/usr/bin/env python3
+      # -*- coding: utf-8 -*-
+      
+      # Есть зашифрованное сообщение
+      
+      secret_message = [
+          'квевтфпп6щ3стмзалтнмаршгб5длгуча',
+          'дьсеы6лц2бане4т64ь4б3ущея6втщл6б',
+          'т3пплвце1н3и2кд4лы12чф1ап3бкычаь',
+          'ьд5фму3ежородт9г686буиимыкучшсал',
+          'бсц59мегщ2лятьаьгенедыв9фк9ехб1а',
+      ]
+      
+      # Нужно его расшифровать и вывести на консоль в удобочитаемом виде.
+      # Должна получиться фраза на русском языке, например: как два байта переслать.
+      
+      # Ключ к расшифровке:
+      #   первое слово - 4-я буква
+      #   второе слово - буквы с 10 по 13, включительно
+      #   третье слово - буквы с 6 по 15, включительно, через одну
+      #   четвертое слово - буквы с 8 по 13, включительно, в обратном порядке
+      #   пятое слово - буквы с 17 по 21, включительно, в обратном порядке
+      #
+      # Обратите вниманме:
+      #   даны номера букв, а не индексы
+      #   срез не включает последний индекс
+      #   подробную информацию об обратных срезах см https://clck.ru/MfEMS
+      #
+      # Подсказки:
+      #   В каждом элементе списка защифровано одно слово.
+      #   Требуется задать конкретные индексы, например secret_message[3][12:23:4]
+      #   4е и 5е слова нужно получить за 1 срез
+      #   Если нужны вычисления и разные пробы - делайте это в консоли пайтона, тут нужен только результат
+      
+      # TODO вывести расшифрованное сообщение
+      word1 = secret_message[0][3]                     
+      word2 = secret_message[1][9:13]                 
+      word3 = secret_message[2][5:15:2]                
+      word4 = secret_message[3][12:6:-1]          
+      word5 = secret_message[4][20:15:-1]        
+      result = f'{word1} {word2} {word3} {word4} {word5}'
+      print(result)
+Результат
+
+<img width="1263" height="39" alt="image" src="https://github.com/user-attachments/assets/d0c6c2ec-7785-43a6-8ea0-a15a6b2cf439" />
+
+Описание проделанной работы
+
+---
+### 08_garden
+Задание 
+
+      #!/usr/bin/env python3
+      # -*- coding: utf-8 -*-
+      
+      # в саду сорвали цветы
+      garden = ('ромашка', 'роза', 'одуванчик', 'ромашка', 'гладиолус', 'подсолнух', 'роза', )
+      
+      # на лугу сорвали цветы
+      meadow = ('клевер', 'одуванчик', 'ромашка', 'клевер', 'мак', 'одуванчик', 'ромашка', )
+      
+      # создайте множество цветов, произрастающих в саду и на лугу
+      garden_set = set(garden)
+      meadow_set = set(meadow)
+      
+      # выведите на консоль все виды цветов
+      all_flowers = garden_set | meadow_set  # или garden_set.union(meadow_set)
+      print("Все виды цветов:", all_flowers)
+      
+      # выведите на консоль те, которые растут и там и там
+      common_flowers = garden_set & meadow_set  # или garden_set.intersection(meadow_set)
+      print("Цветы, которые растут и там и там:", common_flowers)
+      
+      # выведите на консоль те, которые растут в саду, но не растут на лугу
+      garden_only = garden_set - meadow_set  # или garden_set.difference(meadow_set)
+      print("Цветы, которые растут только в саду:", garden_only)
+      
+      # выведите на консоль те, которые растут на лугу, но не растут в саду
+      meadow_only = meadow_set - garden_set  # или meadow_set.difference(garden_set)
+      print("Цветы, которые растут только на лугу:", meadow_only)
+Результат
+
+<img width="1270" height="101" alt="image" src="https://github.com/user-attachments/assets/b075a020-ec22-4117-be00-7f4cc1467e43" />
+
+Описание проделанной работы
+
+---
+### 09_shopping
+Задание
+
+      #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Есть словарь магазинов с распродажами
+
+shops = {
+    'ашан':
+        [
+            {'name': 'печенье', 'price': 10.99},
+            {'name': 'конфеты', 'price': 34.99},
+            {'name': 'карамель', 'price': 45.99},
+            {'name': 'пирожное', 'price': 67.99}
+        ],
+    'пятерочка':
+        [
+            {'name': 'печенье', 'price': 9.99},
+            {'name': 'конфеты', 'price': 32.99},
+            {'name': 'карамель', 'price': 46.99},
+            {'name': 'пирожное', 'price': 59.99}
+        ],
+    'магнит':
+        [
+            {'name': 'печенье', 'price': 11.99},
+            {'name': 'конфеты', 'price': 30.99},
+            {'name': 'карамель', 'price': 41.99},
+            {'name': 'пирожное', 'price': 62.99}
+        ],
+}
+
+# Создайте словарь цен на продкты следующего вида (писать прямо в коде)
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+shops = {
+    'ашан': [
+        {'name': 'печенье', 'price': 10.99},
+        {'name': 'конфеты', 'price': 34.99},
+        {'name': 'карамель', 'price': 45.99},
+        {'name': 'пирожное', 'price': 67.99}
+    ],
+    'пятерочка': [
+        {'name': 'печенье', 'price': 9.99},
+        {'name': 'конфеты', 'price': 32.99},
+        {'name': 'карамель', 'price': 46.99},
+        {'name': 'пирожное', 'price': 59.99}
+    ],
+    'магнит': [
+        {'name': 'печенье', 'price': 11.99},
+        {'name': 'конфеты', 'price': 30.99},
+        {'name': 'карамель', 'price': 41.99},
+        {'name': 'пирожное', 'price': 62.99}
+    ],
+}
+
+# Список продуктов
+products = ['печенье', 'конфеты', 'карамель', 'пирожное']
+
+for product in products:
+    print(f"{product}:")
+    
+    # Собираем цены
+    prices = []
+    for shop_name in shops:
+        for item in shops[shop_name]:
+            if item['name'] == product:
+                prices.append([shop_name, item['price']])
+    
+    # Сортировка пузырьком (или просто встроенная сортировка по первому элементу)
+    for i in range(len(prices)):
+        for j in range(i + 1, len(prices)):
+            if prices[i][1] > prices[j][1]:
+                prices[i], prices[j] = prices[j], prices[i]
+    
+    # Выводим два первых
+    for i in range(2):
+        print(f"  {prices[i][0]}: {prices[i][1]} руб.")
+    print()
+Результат
+
+<img width="1321" height="346" alt="image" src="https://github.com/user-attachments/assets/827edcf8-16eb-48c5-b0ac-2f0d628464c8" />
+
+Описание проделанной работы
+
+---
+### 10_store
+Задание
+
+      #!/usr/bin/env python3
+      # -*- coding: utf-8 -*-
+      
+      # Есть словарь кодов товаров
+      
+      goods = {
+          'Лампа': '12345',
+          'Стол': '23456',
+          'Диван': '34567',
+          'Стул': '45678',
+      }
+      
+      # Есть словарь списков количества товаров на складе.
+      
+      store = {
+          '12345': [
+              {'quantity': 27, 'price': 42},
+          ],
+          '23456': [
+              {'quantity': 22, 'price': 510},
+              {'quantity': 32, 'price': 520},
+          ],
+          '34567': [
+              {'quantity': 2, 'price': 1200},
+              {'quantity': 1, 'price': 1150},
+          ],
+          '45678': [
+              {'quantity': 50, 'price': 100},
+              {'quantity': 12, 'price': 95},
+              {'quantity': 43, 'price': 97},
+          ],
+      }
+      
+      # Рассчитать на какую сумму лежит каждого товара на складе
+      # например для ламп
+      
+      lamps_cost = store[goods['Лампа']][0]['quantity'] * store[goods['Лампа']][0]['price']
+      # или проще (/сложнее ?)
+      lamp_code = goods['Лампа']
+      lamps_item = store[lamp_code][0]
+      lamps_quantity = lamps_item['quantity']
+      lamps_price = lamps_item['price']
+      lamps_cost = lamps_quantity * lamps_price
+      print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, 'руб')
+      
+      # Вывести стоимость каждого вида товара на складе:
+      # один раз распечать сколько всего столов и их общая стоимость,
+      # один раз распечать сколько всего стульев и их общая стоимость,
+      #   и т.д. на складе
+      # Формат строки <товар> - <кол-во> шт, стоимость <общая стоимость> руб
+      
+      # WARNING для знающих циклы: БЕЗ циклов. Да, с переменными; да, неэффективно; да, копипаста.
+      # Это задание на ручное вычисление - что бы потом понять как работают циклы и насколько с ними проще жить.
+      
+      # TODO здесь ваш код
+      table_code = goods['Стол']
+      table1_qty = store[table_code][0]['quantity']
+      table1_price = store[table_code][0]['price']
+      table2_qty = store[table_code][1]['quantity']
+      table2_price = store[table_code][1]['price']
+      table_total_qty = table1_qty + table2_qty
+      table_total_cost = table1_qty * table1_price + table2_qty * table2_price
+      print(f'Стол - {table_total_qty} шт, стоимость {table_total_cost} руб')
+      
+      divan_code = goods['Диван']
+      divan1_qty = store[divan_code][0]['quantity']
+      divan1_price = store[divan_code][0]['price']
+      divan2_qty = store[divan_code][1]['quantity']
+      divan2_price = store[divan_code][1]['price']
+      divan_total_qty = divan1_qty + divan2_qty
+      divan_total_cost = divan1_qty * divan1_price + divan2_qty * divan2_price
+      print(f'Диван - {divan_total_qty} шт, стоимость {divan_total_cost} руб')
+      
+      chair_code = goods['Стул']
+      chair1_qty = store[chair_code][0]['quantity']
+      chair1_price = store[chair_code][0]['price']
+      chair2_qty = store[chair_code][1]['quantity']
+      chair2_price = store[chair_code][1]['price']
+      chair3_qty = store[chair_code][2]['quantity']
+      chair3_price = store[chair_code][2]['price']
+      chair_total_qty = chair1_qty + chair2_qty + chair3_qty
+      chair_total_cost = chair1_qty * chair1_price + chair2_qty * chair2_price + chair3_qty * chair3_price
+      print(f'Стул - {chair_total_qty} шт, стоимость {chair_total_cost} руб')
+Результат
+
+<img width="1280" height="107" alt="image" src="https://github.com/user-attachments/assets/5e750f7d-8092-4bc2-b1f4-ad421d362cda" />
+
+Описание проделанной работы
+
+---
+### Подсказка для git
+
+
+
+
+
 
 
 
