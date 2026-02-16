@@ -3,6 +3,7 @@
 Задание
 
       ```python
+      
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       sites = {
@@ -26,7 +27,6 @@
       distances['London'] = {'Moscow': round(dist_ml, 2), 'Paris': round(dist_lp, 2)}
       distances['Paris'] = {'Moscow': round(dist_mp, 2), 'London': round(dist_lp, 2)}
       print(distances)
-      ```
       
 Результат
 
