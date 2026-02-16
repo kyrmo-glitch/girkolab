@@ -1,6 +1,7 @@
 ## Отчет по лабораторной работе №1
 #### 00_distance
 Задание
+
       \```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
@@ -26,6 +27,7 @@
       distances['Paris'] = {'Moscow': round(dist_mp, 2), 'London': round(dist_lp, 2)}
       print(distances)
       \```
+      
 Результат
 
 <img width="1246" height="45" alt="image" src="https://github.com/user-attachments/assets/0a23673c-51d1-4451-b07f-7ddae6d4ae24" />
