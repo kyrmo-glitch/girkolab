@@ -141,6 +141,7 @@
 <img width="1236" height="101" alt="image" src="https://github.com/user-attachments/assets/4a473feb-248a-4deb-af3b-3975d8ec6474" />
 
 Описание проделанной работы
+
 ---
 ### 04_my_family
 Задание
@@ -180,6 +181,36 @@
 Описание проделанной работы 
 
 ---
+### 05_zoo
+Задание
+
+      # добавьте птиц из списка birds в последние клетки зоопарка
+      birds = ['rooster', 'ostrich', 'lark', ]
+      #  и выведите список на консоль
+      zoo.extend(birds)
+      print(zoo)
+      
+      # уберите слона
+      #  и выведите список на консоль
+      zoo.remove('elephant')
+      print(zoo)
+      
+      # выведите на консоль в какой клетке сидит лев (lion) и жаворонок (lark).
+      # Номера при выводе должны быть понятны простому человеку, не программисту.
+      lion_index = zoo.index('lion') + 1
+      lark_index = zoo.index('lark') + 1
+      print(f'Лев сидит в клетке номер {lion_index}')
+      print(f'Жаворонок сидит в клетке номер {lark_index}')
+
+Результат
+
+<img width="1270" height="123" alt="image" src="https://github.com/user-attachments/assets/d8e1ae9f-9eb8-4512-8648-1fdf7e97181e" />
+
+Описание проделанной работы
+
+---
+### 06_songs_list
+
 
 
 
