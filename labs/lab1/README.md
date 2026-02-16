@@ -44,6 +44,14 @@
       point_2 = (30, 30)
       distance_2 = (point_2[0] ** 2 + point_2[1] ** 2) ** 0.5
       print(distance_2 <= radius)
+Результат 
+
+<img width="1086" height="91" alt="image" src="https://github.com/user-attachments/assets/ce98434c-0f2b-43d4-a099-f582d0da2cf2" />
+
+Описание проделанной работы
+
+#### 01_circle
+
      
 
 
