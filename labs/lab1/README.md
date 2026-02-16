@@ -7,24 +7,32 @@
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       # Есть словарь координат городов
+      
       sites = {
           'Moscow': (550, 370),
           'London': (510, 510),
           'Paris': (480, 480),
       }
+      
       # Составим словарь словарей расстояний между ними
       # расстояние на координатной сетке - ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
+      
       distances = {}
+      
       # TODO здесь заполнение словаря
+      
       mx, my = sites['Moscow']
       lx, ly = sites['London']
       px, py = sites['Paris']
+      
       dist_ml = ((mx - lx) ** 2 + (my - ly) ** 2) ** 0.5
       dist_mp = ((mx - px) ** 2 + (my - py) ** 2) ** 0.5
       dist_lp = ((lx - px) ** 2 + (ly - py) ** 2) ** 0.5
+      
       distances['Moscow'] = {'London': round(dist_ml, 2), 'Paris': round(dist_mp, 2)}
       distances['London'] = {'Moscow': round(dist_ml, 2), 'Paris': round(dist_lp, 2)}
       distances['Paris'] = {'Moscow': round(dist_mp, 2), 'London': round(dist_lp, 2)}
+      
       print(distances)
       
 Результат
@@ -42,19 +50,25 @@
 
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
+      
       # Есть значение радиуса круга
       radius = 42
+      
       # Выведите на консоль значение прощади этого круга с точностю до 4-х знаков после запятой
       # подсказки:
       #       формулу можно подсмотреть в интернете,
       #       пи возьмите равным 3.1415926
       #       точность указывается в функции round()
       # TODO здесь ваш код
+      
       pi = 3.1415926
       area = pi * radius ** 2
       print(round(area, 4))
+      
       # Далее, пусть есть координаты точки
+      
       point_1 = (23, 34)
+      
       # где 23 - координата х, 34 - координата у
       # Если точка point лежит внутри того самого круга [центр в начале координат (0, 0), radius = 42],
       # то выведите на консоль True, Или False, если точка лежит вовне круга.
@@ -64,15 +78,21 @@
       #       квадратный корень - это возведение в степень 0.5
       #       операции сравнения дают булевы константы True и False
       # TODO здесь ваш код
+      
       distance_1 = (point_1[0] ** 2 + point_1[1] ** 2) ** 0.5
       print(distance_1 <= radius)
+      
       # Аналогично для другой точки
+      
       point_2 = (30, 30)
+      
       # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
       # Или False, если точка лежит вовне круга.
       # TODO здесь ваш код
+      
       distance_2 = (point_2[0] ** 2 + point_2[1] ** 2) ** 0.5
       print(distance_2 <= radius)
+      
       # Пример вывода на консоль:
       # 77777.7777
       # False
@@ -115,9 +135,10 @@
 
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
-      
       # Есть строка с перечислением фильмов
+      
       my_favorite_movies = 'Терминатор, Пятый элемент, Аватар, Чужие, Назад в будущее'
+      
       # Выведите на консоль с помощью индексации строки, последовательно:
       #   первый фильм
       #   последний
@@ -129,13 +150,15 @@
       # TODO здесь ваш код
       #   первый фильм
       print(my_favorite_movies[:10])
+      
       #   последний
       print(my_favorite_movies[-15:])
+      
       #   второй
       print(my_favorite_movies[12:25])
+      
       #   второй с конца
       print(my_favorite_movies[-22:-17])
-
 Результат
 
 <img width="1236" height="101" alt="image" src="https://github.com/user-attachments/assets/4a473feb-248a-4deb-af3b-3975d8ec6474" />
@@ -148,13 +171,13 @@
 
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
-      
       # Создайте списки:
-      
       # моя семья (минимум 3 элемента, есть еще дедушки и бабушки, если что)
+      
       my_family = ['папа', 'мама', 'я', 'брат']
       
       # список списков приблизительного роста членов вашей семьи
+      
       my_family_height = [
           ['папа', 180],
           ['мама', 165],
@@ -164,16 +187,17 @@
       
       # Выведите на консоль рост отца в формате
       #   Рост отца - ХХ см
+      
       print(f'Рост отца - {my_family_height[0][1]} см')
       
       # Выведите на консоль общий рост вашей семьи как сумму ростов всех членов
       #   Общий рост моей семьи - ХХ см
+      
       total_height = 0
       for member in my_family_height:
           total_height += member[1]
       
       print(f'Общий рост моей семьи - {total_height} см')
-
 Результат
 
 <img width="1300" height="68" alt="image" src="https://github.com/user-attachments/assets/083395a0-b487-475f-ae2c-fc3aea0ca33e" />
@@ -185,23 +209,27 @@
 Задание
 
       # добавьте птиц из списка birds в последние клетки зоопарка
+      
       birds = ['rooster', 'ostrich', 'lark', ]
+      
       #  и выведите список на консоль
+      
       zoo.extend(birds)
       print(zoo)
       
       # уберите слона
       #  и выведите список на консоль
+      
       zoo.remove('elephant')
       print(zoo)
       
       # выведите на консоль в какой клетке сидит лев (lion) и жаворонок (lark).
       # Номера при выводе должны быть понятны простому человеку, не программисту.
+      
       lion_index = zoo.index('lion') + 1
       lark_index = zoo.index('lark') + 1
       print(f'Лев сидит в клетке номер {lion_index}')
       print(f'Жаворонок сидит в клетке номер {lark_index}')
-
 Результат
 
 <img width="1270" height="123" alt="image" src="https://github.com/user-attachments/assets/d8e1ae9f-9eb8-4512-8648-1fdf7e97181e" />
@@ -210,6 +238,7 @@
 
 ---
 ### 06_songs_list
+Задание
 
 
 
