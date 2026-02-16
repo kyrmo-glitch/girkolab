@@ -21,4 +21,5 @@
       distances['London-Paris'] = ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
       print(distances)
 Результат
+
 <img width="1207" height="53" alt="image" src="https://github.com/user-attachments/assets/e35dc55d-054c-4066-aa04-64ae004d80bf" />
