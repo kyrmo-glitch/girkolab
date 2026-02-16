@@ -4,7 +4,6 @@
 
       
       #!/usr/bin/env python3
-      <span style="color:green"># -*- coding: utf-8 -*-</span>
       sites = {
           'Moscow': (550, 370),
           'London': (510, 510),
