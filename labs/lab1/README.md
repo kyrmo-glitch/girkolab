@@ -228,6 +228,7 @@ print(my_favorite_movies[-22:-17])
 ### 05_zoo
 **Задание**
 
+```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       # есть список животных в зоопарке
@@ -262,6 +263,7 @@ print(my_favorite_movies[-22:-17])
       lark_index = zoo.index('lark') + 1
       print(f'Лев сидит в клетке номер {lion_index}')
       print(f'Жаворонок сидит в клетке номер {lark_index}')
+```
 **Результат**
 
 <img width="1270" height="123" alt="image" src="https://github.com/user-attachments/assets/d8e1ae9f-9eb8-4512-8648-1fdf7e97181e" />
@@ -278,6 +280,7 @@ print(my_favorite_movies[-22:-17])
 ### 06_songs_list
 **Задание**
 
+```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       # Есть список песен группы Depeche Mode со временем звучания с точностью до долей минут
@@ -349,6 +352,7 @@ print(my_favorite_movies[-22:-17])
       
       total2 = round(time3 + time4 + time5, 2)
       print(f'Три песни звучат {total2} минут')
+```
 **Результат**
 
 <img width="1314" height="60" alt="image" src="https://github.com/user-attachments/assets/92ab7aa2-946e-4189-9c89-f2b82e0bde02" />
@@ -362,6 +366,7 @@ print(my_favorite_movies[-22:-17])
 ### 07_secret
 **Задание**
 
+```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       
@@ -405,6 +410,7 @@ print(my_favorite_movies[-22:-17])
       word5 = secret_message[4][20:15:-1]        
       result = f'{word1} {word2} {word3} {word4} {word5}'
       print(result)
+```
 **Результат**
 
 <img width="1263" height="39" alt="image" src="https://github.com/user-attachments/assets/d0c6c2ec-7785-43a6-8ea0-a15a6b2cf439" />
@@ -418,8 +424,9 @@ print(my_favorite_movies[-22:-17])
 
 ---
 ### 08_garden
-Задание 
+**Задание** 
 
+```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       
@@ -448,7 +455,8 @@ print(my_favorite_movies[-22:-17])
       # выведите на консоль те, которые растут на лугу, но не растут в саду
       meadow_only = meadow_set - garden_set  # или meadow_set.difference(garden_set)
       print("Цветы, которые растут только на лугу:", meadow_only)
-Результат
+```
+**Результат**
 
 <img width="1270" height="101" alt="image" src="https://github.com/user-attachments/assets/b075a020-ec22-4117-be00-7f4cc1467e43" />
 
@@ -460,6 +468,7 @@ print(my_favorite_movies[-22:-17])
 ### 09_shopping
 **Задание**
 
+```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       # Есть словарь магазинов с распродажами
@@ -530,6 +539,7 @@ print(my_favorite_movies[-22:-17])
           for i in range(2):
               print(f"  {prices[i][0]}: {prices[i][1]} руб.")
           print()
+```
 **Результат**
 
 <img width="1321" height="346" alt="image" src="https://github.com/user-attachments/assets/827edcf8-16eb-48c5-b0ac-2f0d628464c8" />
@@ -540,6 +550,7 @@ print(my_favorite_movies[-22:-17])
 ### 10_store
 **Задание**
 
+```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       
@@ -623,6 +634,7 @@ print(my_favorite_movies[-22:-17])
       chair_total_qty = chair1_qty + chair2_qty + chair3_qty
       chair_total_cost = chair1_qty * chair1_price + chair2_qty * chair2_price + chair3_qty * chair3_price
       print(f'Стул - {chair_total_qty} шт, стоимость {chair_total_cost} руб')
+```
 **Результат**
 
 <img width="1280" height="107" alt="image" src="https://github.com/user-attachments/assets/5e750f7d-8092-4bc2-b1f4-ad421d362cda" />
