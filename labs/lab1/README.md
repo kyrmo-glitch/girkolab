@@ -644,14 +644,14 @@ print(my_favorite_movies[-22:-17])
 ---
 ### Подсказка для git
 
-- git config --global user.name "Name Surname" — установить имя.
-- git config --global user.email "email@example.com" — установить email.
-- git clone <url> — клонировать существующий репозиторий. 
-- git status — проверить состояние файлов.
-- git add . — добавить все изменения в индекс.
-- git commit -m "Имя" — зафиксировать изменения.
+- git config --global user.name "Name Surname" - установить имя.
+- git config --global user.email "email@example.com" - установить email.
+- git clone <url> - клонировать существующий репозиторий. 
+- git status показывает состояния файлов в рабочей директории: какие файлы изменены, какие ожидают коммита.
+- git add - добавляет всё содержимое рабочей директории в индекс (staging area) для последующего коммита.
+- git commit -m "Имя" -  берёт все данные, добавленные с помощью git add, и сохраняет их.
 - git push - отправить измененеия.
-- git pull — получить изменения с сервера.
+- git pull - получить изменения с сервера.
 
 
 
