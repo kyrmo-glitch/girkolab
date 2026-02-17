@@ -25,6 +25,7 @@ print(f"{result}")
 
 **Результат**
 
+<img width="1261" height="49" alt="image" src="https://github.com/user-attachments/assets/7262a76d-6a1e-4d86-bf85-29ca3f2494de" />
 
 **Описание проделанной работы**
 
@@ -51,7 +52,7 @@ print(f"Количество единиц {result}")
 
 **Результат**
 
-
+<img width="1281" height="38" alt="image" src="https://github.com/user-attachments/assets/5b1242b9-0cad-4f36-bfd6-274c540e8fc7" />
 
 **Описание проделанной работы**
 
@@ -85,6 +86,7 @@ for i in range(174457, 174506):
 
 **Результат**
 
+<img width="1277" height="189" alt="image" src="https://github.com/user-attachments/assets/8f0bca5d-7069-4aa0-89db-f2270ef0fcdb" />
 
 **Описание проделанной работы**
 
