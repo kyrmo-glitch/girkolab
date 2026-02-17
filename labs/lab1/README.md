@@ -644,6 +644,15 @@ print(my_favorite_movies[-22:-17])
 ---
 ### Подсказка для git
 
+git config --global user.name "Name Surname" — установить имя.
+git config --global user.email "email@example.com" — установить email.
+git clone <url> — клонировать существующий репозиторий. 
+git status — проверить состояние файлов.
+git add . — добавить все изменения в индекс.
+git commit -m "Имя" — зафиксировать изменения.
+git push - отправить измененеия.
+git pull — получить изменения с сервера.
+
 
 
 
