@@ -518,7 +518,7 @@ sweets = {
     ]
 }
 
-# Проверим результат
+# Указать надо только по 2 магазина с минимальными ценами
 
 for sweet, shops_list in sweets.items():
     print(f"{sweet}:")
