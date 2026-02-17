@@ -641,6 +641,10 @@ for sweet, shops_list in sweets.items():
 - git commit -m "Имя" -  берёт все данные, добавленные с помощью git add, и сохраняет их.
 - git push - отправить измененеия.
 - git pull - получить изменения с сервера.
+  
+---
+### Использованые источники
+https://git-scm.com/docs/git-add
 
 
 
