@@ -49,7 +49,6 @@ sweets = {
 
 # Проверим результат
 
-print("Словарь sweets с двумя самыми дешевыми магазинами для каждой сладости:")
 for sweet, shops_list in sweets.items():
     print(f"{sweet}:")
     for shop_info in shops_list:
