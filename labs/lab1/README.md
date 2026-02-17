@@ -185,6 +185,7 @@ print(my_favorite_movies[-22:-17])
 ### 04_my_family
 **Задание**
 
+```python
       #!/usr/bin/env python3
       # -*- coding: utf-8 -*-
       # Создайте списки:
@@ -214,6 +215,7 @@ print(my_favorite_movies[-22:-17])
           total_height += member[1]
       
       print(f'Общий рост моей семьи - {total_height} см')
+```
 **Результат**
 
 <img width="1300" height="68" alt="image" src="https://github.com/user-attachments/assets/083395a0-b487-475f-ae2c-fc3aea0ca33e" />
