@@ -28,6 +28,7 @@ print(f"{result}")
 <img width="1261" height="49" alt="image" src="https://github.com/user-attachments/assets/7262a76d-6a1e-4d86-bf85-29ca3f2494de" />
 
 **Описание проделанной работы**
+Цикл for x in product(letters, repeat=5) генерирует все возможные варианты слов длиной 5 из букв слова "ТИМОФЕЙ". Получаются стрчоки вида: ('Т', 'И', 'М', 'О', 'Ф', 'Е', 'Й'), с помощью s = ''.join(x) перевожу это в строку. Расписываю все условия если выполняются увеличиваю счетчик на 1.
 
 ---
 ### №2
@@ -43,7 +44,7 @@ def count_ones_in_binary():
     while x > 0:
         if x % 2 == 1:  
             count += 1
-        x //= 2          
+        x = x // 2           
     return count
 
 result = count_ones_in_binary()
@@ -55,6 +56,8 @@ print(f"Количество единиц {result}")
 <img width="1281" height="38" alt="image" src="https://github.com/user-attachments/assets/5b1242b9-0cad-4f36-bfd6-274c540e8fc7" />
 
 **Описание проделанной работы**
+
+Пока число x не будет равно 0 у меня будет выполняться перевод x в двоичное число и считать количество единиц. Возвращает количество единиц.
 
 ---
 ### №3
