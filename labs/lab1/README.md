@@ -671,6 +671,7 @@ git pull
 https://git-scm.com/docs/git-add
 
 https://devopsgu.ru/guides/shpargalka-po-git/
+[Matplotlib cheatsheets and handouts](https://matplotlib.org/cheatsheets/)
 
 
 
