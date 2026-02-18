@@ -668,7 +668,7 @@ git pull
   
 ---
 ### Использованые источники
-[Подсказка по гиту](https://git-scm.com/docs/git-add)
+[Официальный сайт git](https://git-scm.com/docs/git-add)
 
 [Подсказка по гиту](https://devopsgu.ru/guides/shpargalka-po-git/)
 
