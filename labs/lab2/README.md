@@ -67,6 +67,7 @@ print(f"Количество единиц {result}")
   2 4
 ```
 
+
 ```python
 def search_div(n):
     divisors = set()
