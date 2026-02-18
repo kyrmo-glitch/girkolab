@@ -672,6 +672,10 @@ git pull
 
 [Подсказка по гиту](https://devopsgu.ru/guides/shpargalka-po-git/)
 
+[Словари](https://metanit.com/python/tutorial/3.3.php)
+
+[Подсказка по срезам](https://pythonworld.ru/osnovy/indeksy-i-srezy.html)
+
 
 
 
