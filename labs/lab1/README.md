@@ -633,7 +633,10 @@ for sweet, shops_list in sweets.items():
 ---
 ### Подсказка для git
 
-- git config --global user.name "Name Surname" - установить имя.
+```
+git config --global user.name "Name Surname"
+```
+установить имя.
 - git config --global user.email "email@example.com" - установить email.
 - git clone <url> - клонировать существующий репозиторий. 
 - git status показывает состояния файлов в рабочей директории: какие файлы изменены, какие ожидают коммита.
