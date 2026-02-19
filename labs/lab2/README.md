@@ -86,7 +86,7 @@ def searchediv(n):
     return div
 
 for i in range(174457, 174506):
-    d = searchediv(i)
+    d = sorted(searchediv(i))
     if len(d) == 2:
         print(d[0], d[1])
 ```
