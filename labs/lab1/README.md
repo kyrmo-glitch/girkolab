@@ -47,6 +47,7 @@ print(distances)
 
 ---
 ### 01_circle
+
 **Задание**
 
 ```python
