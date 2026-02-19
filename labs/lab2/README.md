@@ -25,7 +25,9 @@ print(count_codes())
 
 **Результат**
 
-<img width="1261" height="49" alt="image" src="https://github.com/user-attachments/assets/7262a76d-6a1e-4d86-bf85-29ca3f2494de" />
+<img width="615" height="30" alt="изображение" src="https://github.com/user-attachments/assets/ac01c67a-0f24-4c04-8a41-451cea122848" />
+
+
 
 **Описание проделанной работы**
 
@@ -53,7 +55,8 @@ print(count_ones_in_binary()
 
 **Результат**
 
-<img width="1281" height="38" alt="image" src="https://github.com/user-attachments/assets/5b1242b9-0cad-4f36-bfd6-274c540e8fc7" />
+<img width="619" height="30" alt="изображение" src="https://github.com/user-attachments/assets/f99df677-0ff2-4fe9-bd1d-a5721596ce45" />
+
 
 **Описание проделанной работы**
 
