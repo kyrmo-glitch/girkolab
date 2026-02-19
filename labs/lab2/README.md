@@ -9,7 +9,7 @@
 ```python
 from itertools import product
 
-def count_codes():
+def countwords():
     letters = "ТИМОФЕЙ"
     count = 0
     for x in product(letters, repeat=5):
@@ -20,7 +20,7 @@ def count_codes():
     return count
 
 
-print(count_codes())
+print(countwords())
 ```
 
 **Результат**
@@ -41,7 +41,7 @@ print(count_codes())
 Сколько единиц содержится в двоичной записи значения выражения  $$( 4 ^ {2020} + 2 ^ {2017} − 15 )$$? 
 
 ```python
-def count_ones_in_binary():
+def countone():
     x = 4**2020 + 2**2017 - 15
     count = 0
     while x > 0:
@@ -50,7 +50,7 @@ def count_ones_in_binary():
         x = x // 2           
     return count
 
-print(count_ones_in_binary()
+print(countone())
 ```
 
 **Результат**
