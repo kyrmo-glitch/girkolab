@@ -1,6 +1,6 @@
 from itertools import product
 
-def count_codes():
+def countwords():
     letters = "ТИМОФЕЙ"
     count = 0
     for x in product(letters, repeat=5):
@@ -11,4 +11,4 @@ def count_codes():
     return count
 
 
-print(count_codes())
+print(countwords())
