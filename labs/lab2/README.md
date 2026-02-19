@@ -93,7 +93,8 @@ for i in range(174457, 174506):
 
 **Результат**
 
-<img width="1277" height="189" alt="image" src="https://github.com/user-attachments/assets/8f0bca5d-7069-4aa0-89db-f2270ef0fcdb" />
+<img width="627" height="134" alt="изображение" src="https://github.com/user-attachments/assets/06e8ac65-6d94-49b1-88a0-74f5e904da6d" />
+
 
 **Описание проделанной работы**
 
