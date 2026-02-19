@@ -7,5 +7,4 @@ def count_ones_in_binary():
         x //= 2          
     return count
 
-result = count_ones_in_binary()
-print(f"Количество единиц {result}")
+print(count_ones_in_binary())
