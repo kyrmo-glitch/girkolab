@@ -10,5 +10,5 @@ def count_codes():
     
     return count
 
-result = count_codes()
-print(f"{result}")
+
+print(count_codes())
