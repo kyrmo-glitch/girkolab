@@ -103,7 +103,6 @@ for i in range(174457, 174506):
 
 [itertools— Функции, создающие итераторы для эффективного зацикливания](https://docs.python.org/3/library/itertools.html)
 
-[Множества](https://metanit.com/python/tutorial/3.4.php)
 
 
 
