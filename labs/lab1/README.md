@@ -640,7 +640,7 @@ git config --global user.name "Name Surname"
 ```
 Указать свое имя, которое будет использоваться в качестве автора коммита.
 ```
-git config --global user.email "email@example.com" - установить email.
+git config --global user.email "email@example.com"
 ```
 Установить свой адрес электронной почты, который будет использоваться в качестве автора коммита.
 ```
