@@ -1,14 +1,28 @@
+# def search_div(n):
+#     divisors = set()
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             divisors.add(i)
+#             divisors.add(n//i)
+#         if len(divisors) > 2:
+#             break
+#     return divisors
+
+# for i in range(174457, 174506):
+#     d = sorted(search_div(i))
+#     if len(d) == 2:
+#         print(d[0], d[1])
 def search_div(n):
-    divisors = set()
+    divisors = []
     for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
-            divisors.add(i)
-            divisors.add(n//i)
+            divisors.append(i)
+            divisors.append(n//i)
         if len(divisors) > 2:
             break
     return divisors
 
 for i in range(174457, 174506):
-    d = sorted(search_div(i))
+    d= sorted(search_div(i))
     if len(d) == 2:
-        print(d[0], d[1])
+        print( d[0], d[1])
