@@ -9,7 +9,7 @@
 ```python
 from itertools import product
 
-def count_codes():
+def countwords():
     letters = "ТИМОФЕЙ"
     count = 0
     for x in product(letters, repeat=5):
@@ -19,16 +19,19 @@ def count_codes():
     
     return count
 
-result = count_codes()
-print(f"{result}")
+
+print(countwords())
 ```
 
 **Результат**
 
-<img width="1261" height="49" alt="image" src="https://github.com/user-attachments/assets/7262a76d-6a1e-4d86-bf85-29ca3f2494de" />
+<img width="615" height="30" alt="изображение" src="https://github.com/user-attachments/assets/ac01c67a-0f24-4c04-8a41-451cea122848" />
+
+
 
 **Описание проделанной работы**
-Цикл for x in product(letters, repeat=5) генерирует все возможные варианты слов длиной 5 из букв слова "ТИМОФЕЙ". Получаются стрчоки вида: ('Т', 'И', 'М', 'О', 'Ф', 'Е', 'Й'), с помощью s = ''.join(x) перевожу это в строку. Расписываю все условия если выполняются увеличиваю счетчик на 1.
+
+Цикл for x in product(letters, repeat=5) генерирует все возможные варианты слов длиной 5 из букв слова "ТИМОФЕЙ". Получаются кортежи вида: ('Т', 'И', 'М', 'О', 'Ф', 'Е', 'Й'), с помощью s = ''.join(x) перевожу это в строку. Расписываю все условия если выполняются увеличиваю счетчик на 1.
 
 ---
 ### №2
@@ -38,7 +41,7 @@ print(f"{result}")
 Сколько единиц содержится в двоичной записи значения выражения  $$( 4 ^ {2020} + 2 ^ {2017} − 15 )$$? 
 
 ```python
-def count_ones_in_binary():
+def countone():
     x = 4**2020 + 2**2017 - 15
     count = 0
     while x > 0:
@@ -47,13 +50,13 @@ def count_ones_in_binary():
         x = x // 2           
     return count
 
-result = count_ones_in_binary()
-print(f"Количество единиц {result}")
+print(countone())
 ```
 
 **Результат**
 
-<img width="1281" height="38" alt="image" src="https://github.com/user-attachments/assets/5b1242b9-0cad-4f36-bfd6-274c540e8fc7" />
+<img width="619" height="30" alt="изображение" src="https://github.com/user-attachments/assets/f99df677-0ff2-4fe9-bd1d-a5721596ce45" />
+
 
 **Описание проделанной работы**
 
@@ -72,25 +75,26 @@ print(f"Количество единиц {result}")
 
 
 ```python
-def search_div(n):
-    divisors = set()
+def searchediv(n):
+    div = set()
     for i in range(2, int(n**0.5) + 1):
         if n % i == 0:
-            divisors.add(i)
-            divisors.add(n//i)
-        if len(divisors) > 2:
+            div.add(i)
+            div.add(n//i)
+        if len(div) > 2:
             break
-    return divisors
+    return div
 
 for i in range(174457, 174506):
-    d = sorted(search_div(i))
+    d = sorted(searchediv(i))
     if len(d) == 2:
         print(d[0], d[1])
 ```
 
 **Результат**
 
-<img width="1277" height="189" alt="image" src="https://github.com/user-attachments/assets/8f0bca5d-7069-4aa0-89db-f2270ef0fcdb" />
+<img width="627" height="134" alt="изображение" src="https://github.com/user-attachments/assets/06e8ac65-6d94-49b1-88a0-74f5e904da6d" />
+
 
 **Описание проделанной работы**
 
@@ -103,7 +107,6 @@ for i in range(174457, 174506):
 
 [itertools— Функции, создающие итераторы для эффективного зацикливания](https://docs.python.org/3/library/itertools.html)
 
-[Множества](https://metanit.com/python/tutorial/3.4.php)
 
 
 
