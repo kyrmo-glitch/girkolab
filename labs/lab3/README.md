@@ -18,17 +18,24 @@
   >>> count([1, 2, [3, 4, [5]]])
   7
   ```
-  **Результат**
+**Результат**
 
-  <img width="1174" height="104" alt="image" src="https://github.com/user-attachments/assets/b7f11bbe-b11c-4530-b1fd-621df661339f" />
+<img width="1174" height="104" alt="image" src="https://github.com/user-attachments/assets/b7f11bbe-b11c-4530-b1fd-621df661339f" />
 
-  **Описание проделанной работы**
+**Описание проделанной работы**
   
 ---
 
-  **Задание №1**
+**Задание №1**
 
-  Функция для расчёта $$x_i = \frac{(i-1)x_{i-1}}{3} + \frac{(i-2)x_{i-2}}{4},\quad x_1 = 1,\quad x_2 = -\frac{1}{8}$$
+Функция для расчёта $$x_i = \frac{(i-1)x_{i-1}}{3} + \frac{(i-2)x_{i-2}}{4},\quad x_1 = 1,\quad x_2 = -\frac{1}{8}$$
+
+**Результат**
+
+<img width="392" height="210" alt="image" src="https://github.com/user-attachments/assets/65eb36dd-e894-4ad4-967c-78fe6cb553f8" />
+
+**Описание проделанной работы**
+
 
   
 
