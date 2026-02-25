@@ -18,6 +18,10 @@
   >>> count([1, 2, [3, 4, [5]]])
   7
   ```
+  **Результат**
+
+  <img width="1174" height="104" alt="image" src="https://github.com/user-attachments/assets/b7f11bbe-b11c-4530-b1fd-621df661339f" />
+
 
 
 
