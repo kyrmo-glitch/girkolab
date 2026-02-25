@@ -22,6 +22,17 @@
 
   <img width="1174" height="104" alt="image" src="https://github.com/user-attachments/assets/b7f11bbe-b11c-4530-b1fd-621df661339f" />
 
+  **Описание проделанной работы**
+  
+---
+
+  **Задание №1**
+
+  Функция для расчёта $xi=(i−1)xi−13+(i−2)xi−24x i= 3(i−1)x i−1+ 4(i−2)x i−2.x1=1,x2=−18x 1=1,x 2​=−81$
+  
+
+  
+
 
 
 
