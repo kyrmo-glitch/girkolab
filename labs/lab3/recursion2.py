@@ -19,12 +19,12 @@ def calculate_x(i):
     if i == 2:
         return -1/8
     
-    x_prev2 = 1        # x1
-    x_prev1 = -1/8     # x2
+    x_prev1 = 1        # x1
+    x_prev2 = -1/8     # x2
     
     for n in range(3, i + 1):
-        x_current = ((n-1) * x_prev1) / 3 + ((n-2) * x_prev2) / 4
-        x_prev2, x_prev1 = x_prev1, x_current
+        x_current = ((n-1) * x_prev2) / 3 + ((n-2) * x_prev1) / 4
+        x_prev1, x_prev2 = x_prev2, x_current
     
     return x_prev1
 
