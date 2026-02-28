@@ -1,21 +1,22 @@
-def count(lst):
+def count1(lst):
     total = 0
     for item in lst:
         total +=1
         if isinstance(item, list):
-            total += count(item)
+            total += count1(item)
     return total
 
-print(count([]))
-print(count([1, 2, 3]))
-print(count(["x", "y", ["z"]]))
-print(count([1, 2, [3, 4, [5]]]))
+print(count1([]))
+print(count1([1, 2, 3]))
+print(count1(["x", "y", ["z"]]))
+print(count1([1, 2, [3, 4, [5]]]))
+
 
 
 print('-------------------------------')
 
 
-def count_elements(lst):
+def count2(lst):
     process = [lst]  # список списков для обработки
     count = 0
     
@@ -34,7 +35,8 @@ def count_elements(lst):
     return count
 
 # Проверка
-print(count_elements([]))                    # 0
-print(count_elements([1, 2, 3]))             # 3
-print(count_elements(["x", "y", ["z"]]))     # 4
-print(count_elements([1, 2, [3, 4, [5]]]))   # 7
+print(count2([]))                    # 0
+print(count2([1, 2, 3]))             # 3
+print(count2(["x", "y", ["z"]]))     # 4
+print(count2([1, 2, [3, 4, [5]]]))
+
