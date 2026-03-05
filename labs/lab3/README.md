@@ -60,6 +60,8 @@
 
 ### Используемые источники
 
+[](https://docs-python.ru/tutorial/vstroennye-funktsii-interpretatora-python/funktsija-isinstance/)
+
 
 
 
