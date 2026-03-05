@@ -42,4 +42,6 @@ def print_sweets():
     for sweet, shops_list in sweets.items():
         print(f"{sweet}:")
         for shop_info in shops_list:
-            print(f"  {shop_info['shop']}: {shop_info['price']} руб.")
+            shop_name = shop_info['shop']
+            price = shop_info['price']
+            print(f"  {shop_name}: {price} руб.")

@@ -1,4 +1,3 @@
-my_family = ['папа', 'мама', 'я', 'сестра']
 
 my_family_height = [
     ['папа', 180],
@@ -7,10 +6,10 @@ my_family_height = [
     ['сестра', 170]
 ]
 
-def get_father_height():
+def father_height():
     return my_family_height[0][1]
 
-def get_total_height():
+def total_height():
     total = 0
     for member in my_family_height:
         total += member[1]

@@ -22,12 +22,12 @@ songs_dict = {
     'Clean': 5.68,
 }
 def task1():
-    t = 0
+    time = 0
     for song in songs_list:
         if song[0] in ['Halo', 'Enjoy the Silence', 'Clean']:
-            t += song[1]
-    return round(t, 2)
+            time += song[1]
+    return round(time, 2)
 
 def task2():
-    t = songs_dict['Sweetest Perfection'] + songs_dict['Policy of Truth'] + songs_dict['Blue Dress']
-    return round(t, 2)
+    time = songs_dict['Sweetest Perfection'] + songs_dict['Policy of Truth'] + songs_dict['Blue Dress']
+    return round(time, 2)

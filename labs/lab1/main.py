@@ -1,63 +1,55 @@
-from otstup import printnomer
+print('№1')
 
-printnomer()
+from distance import city_distances
+print(city_distances())
 
-from distance import calculate_city_distances
-sites = {
-    'Moscow': (550, 370),
-    'London': (510, 510),
-    'Paris': (480, 480),
-}
-print(calculate_city_distances(sites))
-
-printnomer()
+print('№2')
 
 from circle import s, tochka1, tochka2
 print(s(42))
 print(tochka1((23, 34),42))
 print(tochka2((30, 30),42))
 
-printnomer()
+print('№3')
 
 from operations import result
 print(result())
 
-printnomer()
+print('№4')
 
-from favourite_movies import get_films
+from favourite_movies import films
 my_favorite_movies = 'Терминатор, Пятый элемент, Аватар, Чужие, Назад в будущее'
-first, last, second, second_last = get_films(my_favorite_movies)
+first, last, second, second_last = films(my_favorite_movies)
 print(first, last, second, second_last, sep='\n')
 
-printnomer()
+print('№5')
 
-from my_family import get_father_height, get_total_height
-print(get_father_height())
-print(f'Рост отца - {get_father_height()} см')
-print(f'Общий рост моей семьи - {get_total_height()} см')
+from my_family import father_height, total_height
+print(father_height())
+print(f'Рост отца - {father_height()} см')
+print(f'Общий рост моей семьи - {total_height()} см')
 
-printnomer()
+print('№6')
 
-from zoo import add_bear, add_birds, remove_elephant, print_cage
-birds = ['rooster', 'ostrich', 'lark']
+from zoo import add_bear, add_birds, remove_elephant, cage_number
 print(add_bear())
-print(add_birds(birds))
+print(add_birds())
 print(remove_elephant())
-print_cage('lion', 'Лев')
-print_cage('lark', 'Жаворонок')
+cage_number('lion', 'Лев')
+cage_number('lark', 'Жаворонок')
 
-printnomer()
+print('№7')
 
 from songs_list import task1, task2
 print(f'Три песни звучат {task1()} минут')
 print(f'Три песни звучат {task2()} минут')
 
-printnomer()
+print('№8')
 
 from secret import decode_message
 print(decode_message())
 
-printnomer()
+print('№9')
 
 from garden import all_flowers, common, garden_only, meadow_only
 print("Все:", all_flowers())
@@ -65,12 +57,12 @@ print("Общие:", common())
 print("Только в саду:", garden_only())
 print("Только на лугу:", meadow_only())
 
-printnomer()
+print('№10')
 
 from shopping import print_sweets
-print(print_sweets())
+print_sweets()
 
-printnomer()
+print('№11')
 
 from store import print_lamp, print_table, print_sofa, print_chair
 print(print_lamp())

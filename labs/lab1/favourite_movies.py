@@ -1,4 +1,4 @@
-def get_films(movies):
+def films(movies):
     return (
         movies[:10],                    
         movies[-15:],                

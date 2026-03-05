@@ -6,7 +6,9 @@ goods = {
 }
 
 store = {
-    '12345': [{'quantity': 27, 'price': 42}],
+    '12345': [
+        {'quantity': 27, 'price': 42}
+    ],
     '23456': [
         {'quantity': 22, 'price': 510},
         {'quantity': 32, 'price': 520},
