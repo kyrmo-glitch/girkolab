@@ -60,7 +60,7 @@
 
 ### Используемые источники
 
-[](https://docs-python.ru/tutorial/vstroennye-funktsii-interpretatora-python/funktsija-isinstance/)
+[Функция isinstance()](https://docs-python.ru/tutorial/vstroennye-funktsii-interpretatora-python/funktsija-isinstance/)
 
 
 
