@@ -11,10 +11,6 @@ def countone():
     >>> x = 4**2020 + 2**2017 - 15
     >>> bin(x).count('1') == countone()
     True
-    
-    >>> # Проверка, что результат не меняется
-    >>> countone() == countone()
-    True
     """
     x = 4**2020 + 2**2017 - 15
     count = 0
@@ -24,8 +20,8 @@ def countone():
         x //= 2
     return count
 
+print(f"Результат: {countone()}")
 
 if __name__ == "__main__":
     import doctest
     doctest.testmod(verbose=True)
-    print(f"Результат: {countone()}")

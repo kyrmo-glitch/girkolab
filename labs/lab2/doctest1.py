@@ -8,8 +8,8 @@ def countwords():
     True
     >>> countwords()
     10476
-    
-    Тесты для проверки логики подсчета:
+    >>> isinstance(countwords(), int)
+    True
     >>> letters = "ТИМОФЕЙ"
     >>> count = 0
     >>> for x in product(letters, repeat=5):
@@ -28,8 +28,8 @@ def countwords():
             count += 1
     
     return count
+print(f"Результат: {countwords()}")
 
 if __name__ == "__main__":
     import doctest
     doctest.testmod(verbose=True)
-    print(f"Результат: {countwords()}")

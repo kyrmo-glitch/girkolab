@@ -32,11 +32,14 @@ def searchediv(n):
             break
     return div
 
+for i in range(174457, 174506):
+            d= sorted(searchediv(i))
+            if len(d) == 2:
+                print(i,d[0], d[1])
+   
+ 
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod(verbose=True)
     
-    for i in range(174457, 174506):
-        d= sorted(searchediv(i))
-        if len(d) == 2:
-            print(i,d[0], d[1])
