@@ -17,17 +17,16 @@ print('-------------------------------')
 
 
 def count2(lst):
-    process = [lst]  # список списков для обработки
+    process = [lst]  
     count = 0
     
     while process:
-        # Берем первый элемент (не последний, как в стеке)
         current = process[0]
-        process = process[1:]  # удаляем первый элемент
+        process = process[1:] 
         
         for item in current:
             if isinstance(item, list):
-                process.append(item)  # добавляем в конец
+                process.append(item)  
                 count += 1
             else:
                 count += 1
@@ -35,8 +34,8 @@ def count2(lst):
     return count
 
 # Проверка
-print(count2([]))                    # 0
-print(count2([1, 2, 3]))             # 3
-print(count2(["x", "y", ["z"]]))     # 4
+print(count2([]))                    
+print(count2([1, 2, 3]))             
+print(count2(["x", "y", ["z"]]))    
 print(count2([1, 2, [3, 4, [5]]]))
 
