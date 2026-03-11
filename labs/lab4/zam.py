@@ -10,7 +10,8 @@ def make_calc(operation, initial=0):
             result = result * num
         elif operation == '/':
             if num == 0:
-                return 'Ошибка'
+                print('Ошибка')
+                return result
             result = result / num
         return result
     return calculator
