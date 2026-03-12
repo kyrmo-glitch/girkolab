@@ -58,6 +58,8 @@
 
 [Замыкания](https://metanit.com/python/tutorial/2.19.php)
 
+[Область видимости переменных](https://metanit.com/python/tutorial/2.9.php)
+
 
 
 
