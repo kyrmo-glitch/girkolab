@@ -48,7 +48,9 @@
 
 ## Использованные источники
 
-(asdsada)[https://metanit.com/python/tutorial/2.28.php]
+[Декораторы](https://metanit.com/python/tutorial/2.28.php)
+
+[Замыкания](https://metanit.com/python/tutorial/2.19.php)
 
 
 
