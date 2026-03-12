@@ -46,6 +46,10 @@
 
 **Описание проделанной работы**
 
+## Использованные источники
+
+(asdsada)[https://metanit.com/python/tutorial/2.28.php]
+
 
 
 
