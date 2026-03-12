@@ -1,9 +1,9 @@
 def repeat(times):
     def decorator(func):
-        def wrapper(*args, **kwargs):
+        def wrapper(*args):
             results = []
             for i in range(times):
-                result = func(*args, **kwargs)
+                result = func(*args)
                 results.append(result)
             return results
         return wrapper
