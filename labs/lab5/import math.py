@@ -7,7 +7,6 @@ def deliteli(number):
             count = count + 1
     return count
 
-
 a = int(input())
 def good_number(number):
     global a
@@ -27,6 +26,5 @@ good_numbers = list(filter(good_number, numbers))
 
 print(f"Числа, у которых делителей <= {a}:")
 
-if good_numbers:
-    for num in good_numbers:
-        print(num)
+for num in good_numbers:
+    print(num)
