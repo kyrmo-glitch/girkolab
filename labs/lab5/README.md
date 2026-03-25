@@ -16,6 +16,6 @@
 
 **Используемые материалы**
 
-(https://habr.com/ru/articles/866616/) [Генераторы]
+[https://habr.com/ru/articles/866616/](Генераторы)
 
 
