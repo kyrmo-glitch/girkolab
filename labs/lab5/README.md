@@ -22,7 +22,7 @@
 
 **Используемые материалы**
 
-[Генераторы](https://habr.com/ru/articles/866)
+[Filter](https://pythonru.com/uroki/funkcija-filter-dlja-nachinajushhih)
 
 [Генераторы](https://practicum.yandex.ru/blog/chto-takoe-generator-v-python-i-dlya-chego-nuzhen/#sozdaniye-generatora-v-python)
 
