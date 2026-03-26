@@ -26,3 +26,4 @@
 
 [Генераторы](https://practicum.yandex.ru/blog/chto-takoe-generator-v-python-i-dlya-chego-nuzhen/#sozdaniye-generatora-v-python)
 
+[Линейный конгруэнтный метод](https://progpython.ru/vopros-otvet/1508/algoritmy-generatsii-sluchajnyh-chisel-vybor-luchshego-metoda/)
