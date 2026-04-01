@@ -14,10 +14,8 @@ def count_divisors(num):
 
 random_gen = my_random_generator(1, 100)
 
-n=int(input())
 def check_divisors(num):
-    global n
-    return count_divisors(num) <= n
+    return count_divisors(num) <= 5
 
 filtered_numbers = filter(check_divisors, random_gen)
 
