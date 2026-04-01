@@ -10,13 +10,20 @@
 
 **Результат**
 
+<img width="1153" height="168" alt="image" src="https://github.com/user-attachments/assets/0521f847-8e99-4b3b-b95f-f2be71e34c5d" />
+
+
 **Описание проделанной работы**
+
+Функция random_generator генератор случайных чисе. Начальное значение seed -  функция time(), с помощью операции (% (max - min + 1))+min числа приводятся к заданному диапазону, yield делает функцию генератором, выдающим числа по запросу. Функция подсчета делителей count_deliteli. Перебирает числа от 1 до нужного числа, сли число делится без остатка увеличивает счетчик, возвращает количество делителей. Функция проверки условия check_deliteli, проверяет не превышает ли количество делителей числа значение n. Функция filter применяет check_deliteli к каждому числу из генератора, оставляет только те числа, для которых условие выполняется, возвращает отфильтрованные значения.
+
 
 ---
 
 **Используемые материалы**
 
-[Генераторы](https://habr.com/ru/articles/866)
+[Filter](https://pythonru.com/uroki/funkcija-filter-dlja-nachinajushhih)
 
 [Генераторы](https://practicum.yandex.ru/blog/chto-takoe-generator-v-python-i-dlya-chego-nuzhen/#sozdaniye-generatora-v-python)
 
+[Линейный конгруэнтный метод](https://progpython.ru/vopros-otvet/1508/algoritmy-generatsii-sluchajnyh-chisel-vybor-luchshego-metoda/)
