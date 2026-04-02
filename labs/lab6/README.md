@@ -29,3 +29,5 @@
 [Tkinter](https://metanit.com/python/tkinter/2.1.php)
 
 [Tkinter](https://younglinux.info/tkinter/course)
+
+[Document](https://docs-python.ru/packages/modul-python-docx-python/klass-document/)
