@@ -28,4 +28,6 @@
 
 [appJar](http://appjar.info/pythonGuiOptions/)
 
+[Пакеты модулей](https://docs-python.ru/tutorial/sistema-importa-python/vlozhennye-podpakety/)
+
 [Document](https://docs-python.ru/packages/modul-python-docx-python/klass-document/)
