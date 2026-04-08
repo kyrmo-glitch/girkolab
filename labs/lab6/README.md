@@ -24,10 +24,10 @@
 
 **Используемые материалы**
 
-[Tkinter](https://docs.python.org/3/library/tkinter.html)
+[appJar](https://www.geeksforgeeks.org/python/appjar-module-in-python/)
 
-[Tkinter](https://metanit.com/python/tkinter/2.1.php)
+[appJar](http://appjar.info/pythonGuiOptions/)
 
-[Tkinter](https://younglinux.info/tkinter/course)
+[Пакеты модулей](https://docs-python.ru/tutorial/sistema-importa-python/vlozhennye-podpakety/)
 
 [Document](https://docs-python.ru/packages/modul-python-docx-python/klass-document/)
