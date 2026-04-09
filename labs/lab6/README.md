@@ -16,6 +16,8 @@
 
 **Результат**
 
+<img width="1097" height="930" alt="image" src="https://github.com/user-attachments/assets/84f21a16-d9f7-462c-959c-61dbd9710efd" />
+
 **Описание проделанной работы**
 
 
