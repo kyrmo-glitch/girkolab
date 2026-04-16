@@ -13,5 +13,9 @@ def repeat(decorated_func):
 def say_hello(name):
     return f"Привет, {name}!"
 
+decorated = repeat(say_hello)
+result = decorated("anna")
+print(result)
+
 result = say_hello("Анна")
 print(result)
