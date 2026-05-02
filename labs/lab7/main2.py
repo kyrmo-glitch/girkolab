@@ -28,6 +28,7 @@ class Figure(ABC):
     def __str__(self):
         result = f"{self._name}: {self._result}"
         print(f"[__str__] Вызван у {self._name}")
+        print(result)
         return result
     
     def __len__(self):
@@ -117,8 +118,11 @@ class Trapezoid(Figure):
     def calculate(self):
         """Расчёт параметров трапеции"""
         self.area = trap_area(self.a, self.b, self.h)
+        ri =  trap_r_in(self.a, self.b, self.h)
+        ro =  trap_r_in(self.a, self.b, self.h)
         self._result = f"Площадь: {round(self.area, 2)}\n"
-        self._result += "Радиусы не рассчитываются"
+        self._result += f"Радиус вписанной: {round(ri, 2)}\n"
+        self._result += f"Радиус вписанной: {round(ro, 2)}\n"
         return self._result
     
     def __repr__(self):
@@ -216,8 +220,8 @@ class App:
         # Вызов dunder-методов
         print("\n -РЕЗУЛЬТАТ ПРЯМОУГОЛЬНИКА-")
         str(self.rect)
-        repr(self.rect)
         len(self.rect)
+        repr(self.rect)
 
         if self.rect.area > 0 and self.tri.area > 0 and self.trap.area > 0:
             print("\n" + "-"*50)
@@ -240,8 +244,8 @@ class App:
         # Вызов dunder-методов
         print("\n -РЕЗУЛЬТАТ ТРЕУГОЛЬНИКА-")
         str(self.tri)
-        repr(self.tri)
         len(self.tri)
+        repr(self.tri)
 
         if self.rect.area > 0 and self.tri.area > 0 and self.trap.area > 0:
             print("\n" + "-"*50)
@@ -265,8 +269,8 @@ class App:
         
         print("\n -РЕЗУЛЬТАТ ТРАПЕЦИИ-")
         str(self.trap)
-        repr(self.trap)
         len(self.trap)
+        repr(self.trap)
 
 
         if self.rect.area > 0 and self.tri.area > 0 and self.trap.area > 0:
@@ -303,5 +307,7 @@ class App:
     def run(self):
         self.root.mainloop()
 
+        
 app = App()
 app.run()
+
