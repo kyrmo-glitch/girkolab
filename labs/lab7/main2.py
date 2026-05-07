@@ -69,7 +69,7 @@ class Rectangle(Figure):
             result = self.area + other.area
             print(f"[__add__] {self.area} + {other.area} = {result}")
             return result
-        
+        return NotImplemented
 
 
 class Triangle(Figure):
@@ -103,7 +103,7 @@ class Triangle(Figure):
             result = abs(self.area - other.area)
             print(f"[__sub__] |{self.area} - {other.area}| = {result}")
             return result
-        
+        return None
 
 
 class Trapezoid(Figure):
@@ -118,11 +118,18 @@ class Trapezoid(Figure):
     def calculate(self):
         """Расчёт параметров трапеции"""
         self.area = trap_area(self.a, self.b, self.h)
-        ri =  trap_r_in(self.a, self.b, self.h)
-        ro =  trap_r_in(self.a, self.b, self.h)
+        ri = trap_r_in(self.a, self.b, self.h)
+        ro = trap_r_out(self.a, self.b, self.h)  
         self._result = f"Площадь: {round(self.area, 2)}\n"
-        self._result += f"Радиус вписанной: {round(ri, 2)}\n"
-        self._result += f"Радиус вписанной: {round(ro, 2)}\n"
+        if ri is not None and ri > 0:
+            self._result += f"Радиус вписанной: {round(ri, 2)}\n"
+        else:
+            self._result += "Вписанной окружности нет\n"
+        if ro is not None and ro > 0:
+            self._result += f"Радиус описанной: {round(ro, 2)}\n"
+        else:
+            self._result += "Описанной окружности нет\n"
+            
         return self._result
     
     def __repr__(self):
@@ -136,7 +143,8 @@ class Trapezoid(Figure):
             result = self.area * factor
             print(f"[__mul__] {self.area} * {factor} = {result}")
             return result
-       
+        return None
+
 
 class App:
     
@@ -212,67 +220,52 @@ class App:
     
     def calc_rectangle(self):
         """Обработчик расчёта прямоугольника"""
+
         self.rect.a = float(self.rect_a.get())
         self.rect.b = float(self.rect_b.get())
         result = self.rect.calculate()
         self.rect_result.config(text=f"Результат:\n{result}")
-        
-        # Вызов dunder-методов
-        print("\n -РЕЗУЛЬТАТ ПРЯМОУГОЛЬНИКА-")
+            
+
         str(self.rect)
         len(self.rect)
         repr(self.rect)
-
-        if self.rect.area > 0 and self.tri.area > 0 and self.trap.area > 0:
-            print("\n" + "-"*50)
-            print("ОПЕРАЦИИ С ФИГУРАМИ")
-            print("-"*50)
-            self.rect + self.tri
-            self.tri - self.trap
-            self.trap * 3
             
-        
-    
+           
     def calc_triangle(self):
         """Обработчик расчёта треугольника"""
-        self.tri.a = float(self.tri_a.get())
-        self.tri.b = float(self.tri_b.get())
-        self.tri.c = float(self.tri_c.get())
-        result = self.tri.calculate()
-        self.tri_result.config(text=f"Результат:\n{result}")
-        
-        # Вызов dunder-методов
-        print("\n -РЕЗУЛЬТАТ ТРЕУГОЛЬНИКА-")
-        str(self.tri)
-        len(self.tri)
-        repr(self.tri)
-
-        if self.rect.area > 0 and self.tri.area > 0 and self.trap.area > 0:
-            print("\n" + "-"*50)
-            print("ОПЕРАЦИИ С ФИГУРАМИ")
-            print("-"*50)
-            self.rect + self.tri
-            self.tri - self.trap
-            self.trap * 2
-            self.trap * 3
+        try:
+            self.tri.a = float(self.tri_a.get())
+            self.tri.b = float(self.tri_b.get())
+            self.tri.c = float(self.tri_c.get())
+            result = self.tri.calculate()
+            self.tri_result.config(text=f"Результат:\n{result}")
             
-        
+            # Вызов dunder-методов
+            print("\n -РЕЗУЛЬТАТ ТРЕУГОЛЬНИКА-")
+            str(self.tri)
+            len(self.tri)
+            repr(self.tri)
+            
+            self.perform_operations()
+        except ValueError as e:
+            messagebox.showerror("Ошибка", f"Некорректный ввод: {e}")
     
     def calc_trapezoid(self):
-       
+        """Обработчик расчёта трапеции"""
+        
         self.trap.a = float(self.trap_a.get())
         self.trap.b = float(self.trap_b.get())
         self.trap.h = float(self.trap_h.get())
         result = self.trap.calculate()
         self.trap_result.config(text=f"Результат:\n{result}")
-        
-        
-        print("\n -РЕЗУЛЬТАТ ТРАПЕЦИИ-")
+            
         str(self.trap)
         len(self.trap)
         repr(self.trap)
-
-
+    
+    def perform_operations(self):
+        """Выполнение операций между фигурами"""
         if self.rect.area > 0 and self.tri.area > 0 and self.trap.area > 0:
             print("\n" + "-"*50)
             print("ОПЕРАЦИИ С ФИГУРАМИ")
@@ -281,24 +274,25 @@ class App:
             self.tri - self.trap
             self.trap * 2
             self.trap * 3
-        
+    
     def save_to_word(self):
         """Сохранение результатов в Word"""
         doc = Document()
         doc.add_heading("Результаты расчётов", 0)
         
         if self.rect._result:
-            doc.add_paragraph(self.rect._result)
+            doc.add_paragraph(f"Прямоугольник:\n{self.rect._result}\n")
         
         if self.tri._result:
-            doc.add_paragraph(self.tri._result)
+            doc.add_paragraph(f"Треугольник:\n{self.tri._result}\n")
         
         if self.trap._result:
-            doc.add_paragraph(self.trap._result)
+            doc.add_paragraph(f"Трапеция:\n{self.trap._result}\n")
         
         path = filedialog.asksaveasfilename(
             defaultextension=".docx", 
-            initialfile="результаты.docx"
+            initialfile="результаты.docx",
+            filetypes=[("Word documents", "*.docx")]
         )
         if path:
             doc.save(path)
@@ -307,7 +301,7 @@ class App:
     def run(self):
         self.root.mainloop()
 
-        
+
+
 app = App()
 app.run()
-
