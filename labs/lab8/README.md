@@ -14,6 +14,9 @@
 
 **Описание**
 
+<img width="490" height="469" alt="image" src="https://github.com/user-attachments/assets/0636ab7f-32d9-4c22-b25c-fb5d4a551ae8" />
+
+
 **Инструкции по запуску**
 
 Проверить версию питона
@@ -64,5 +67,10 @@ python3 main.py
 1. [✓] Купить хлеб (14.05)
 2. [✓] Сделать дз (14.05)
 
+
+**Список использованных истчников**
+()[https://metanit.com/python/tutorial/2.20.php]
+()[https://metanit.com/python/tutorial/2.21.php]
+()[https://python-academy.org/ru/guide/polymorphism]
 
 
