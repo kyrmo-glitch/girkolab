@@ -52,9 +52,13 @@ def calculate_trapezoid(btn):
     h = float(app.getEntry("trap_h"))
     
     s = trap_area(a, b, h)
+    ri = trap_r_in(a,b,h)
+    ro = trap_r_out(a,b,h)
+   
     
     text = f"Площадь: {round(s,2)}\n"
-    text += "Радиусы не рассчитываются"
+    text += f"Радиус вписанной: {round(ri,2)}\n"
+    text += f"Радиус описанной: {round(ro,2)}"
     
     app.setLabel("trap_result", text)
     last_trap_result = text

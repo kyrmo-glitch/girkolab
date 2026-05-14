@@ -1,32 +1,38 @@
-# todo_app.py
+
 from datetime import datetime
 from appJar import gui
 from abc import ABC, abstractmethod
+import psycopg2
 
-# ====================== ИСКЛЮЧЕНИЯ ======================
+try:
+    conn = psycopg2.connect(
+        host="localhost",
+        database="calculator_db",
+        user="user",
+        password="password"
+    )
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS tasks (
+            id SERIAL PRIMARY KEY,
+            title TEXT NOT NULL,
+            description TEXT,            completed BOOLEAN DEFAULT FALSE,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    conn.commit()
+    print("✓ База данных подключена")
+except Exception as e:
+    print(f"✗ Ошибка БД: {e}")
+    conn = None
+    cursor = None
+
+
 class ToDoAppException(Exception): pass
 class TaskNotFoundException(ToDoAppException): pass
 class EmptyTaskTitleException(ToDoAppException): pass
 
-# ====================== ХРАНИЛИЩЕ (полиморфизм) ======================
-class Storage(ABC):
-    @abstractmethod
-    def save(self, data): pass
-    
-    @abstractmethod
-    def load(self): pass
 
-class MemoryStorage(Storage):
-    def __init__(self):
-        self.data = None
-    
-    def save(self, data):
-        self.data = data
-    
-    def load(self):
-        return self.data
-
-# ====================== ЗАДАЧА ======================
 class Task:
     def __init__(self, title, description="", task_id=None, completed=False, created_at=None):
         if not title or not title.strip():
@@ -47,8 +53,7 @@ class Task:
 
 # ====================== МЕНЕДЖЕР ======================
 class TaskManager:
-    def __init__(self, storage: Storage):
-        self.storage = storage
+    def __init__(self):
         self.tasks = []
         self.next_id = 1
         self.load_tasks()
@@ -58,14 +63,32 @@ class TaskManager:
         task.id = self.next_id
         self.tasks.append(task)
         self.next_id += 1
-        self.save_tasks()
+        
+        if conn:
+            try:
+                cursor.execute(
+                    "INSERT INTO tasks (title, description, completed) VALUES (%s, %s, %s)",
+                    (title, description, False)
+                )
+                conn.commit()
+            except Exception as e:
+                print(f"Ошибка сохранения в БД: {e}")
+        
         return task.id
     
     def remove_task(self, task_id):
         for task in self.tasks:
             if task.id == task_id:
                 self.tasks.remove(task)
-                self.save_tasks()
+
+
+                if conn:
+                    try:
+                        cursor.execute("DELETE FROM tasks WHERE id = %s", (task_id,))
+                        conn.commit()
+                    except Exception as e:
+                        print(f"Ошибка удаления из БД: {e}")
+                
                 return
         raise TaskNotFoundException(f"Задача с ID {task_id} не найдена")
     
@@ -73,7 +96,18 @@ class TaskManager:
         for task in self.tasks:
             if task.id == task_id:
                 task.completed = not task.completed
-                self.save_tasks()
+
+                
+                if conn:
+                    try:
+                        cursor.execute(
+                            "UPDATE tasks SET completed = %s WHERE id = %s",
+                            (task.completed, task_id)
+                        )
+                        conn.commit()
+                    except Exception as e:
+                        print(f"Ошибка обновления в БД: {e}")
+                
                 return
         raise TaskNotFoundException(f"Задача с ID {task_id} не найдена")
     
@@ -86,36 +120,35 @@ class TaskManager:
                 return task
         return None
     
-    def save_tasks(self):
-        data = {
-            'next_id': self.next_id,
-            'tasks': [{'id': t.id, 'title': t.title, 'description': t.description, 
-                       'completed': t.completed, 'created_at': t.created_at.isoformat()} 
-                      for t in self.tasks]
-        }
-        self.storage.save(data)
-    
     def load_tasks(self):
-        data = self.storage.load()
-        if not data: 
-            return
-        
-        self.next_id = data.get('next_id', 1)
-        for task_data in data.get('tasks', []):
-            task = Task(
-                task_data['title'],
-                task_data.get('description', ''),
-                task_data['id'],
-                task_data.get('completed', False),
-                datetime.fromisoformat(task_data['created_at']) if 'created_at' in task_data else None
-            )
-            self.tasks.append(task)
+        # Загружаем из БД
+        if conn:
+            try:
+                cursor.execute("SELECT id, title, description, completed, created_at FROM tasks ORDER BY id")
+                results = cursor.fetchall()
+                
+                for row in results:
+                    task = Task(
+                        title=row[1],
+                        description=row[2] or "",
+                        task_id=row[0],
+                        completed=row[3],
+                        created_at=row[4]
+                    )
+                    self.tasks.append(task)
+                    
+                    if row[0] >= self.next_id:
+                        self.next_id = row[0] + 1
+                
+                print(f"Загружено {len(self.tasks)} задач из БД")
+            except Exception as e:
+                print(f"Ошибка загрузки из БД: {e}")
 
 # ====================== ПРИЛОЖЕНИЕ ======================
 class ToDoApplication:
     def __init__(self):
         self.app = gui("ToDo List", "500x450")
-        self.task_manager = TaskManager(MemoryStorage())
+        self.task_manager = TaskManager()
         self.setup_ui()
     
     def setup_ui(self):
@@ -137,12 +170,36 @@ class ToDoApplication:
         self.app.addButton("Выполнено", self.complete_task, 4, 1)
         self.app.addButton("Удалить", self.delete_task, 5, 0)
         self.app.addButton("Подробнее", self.show_task_details, 5, 1)
+        self.app.addButton("История из БД", self.show_db_history, 6, 0, 2)
         
-        self.app.addLabel("status", "Готов", 6, 0, 2)
-        self.app.setLabelBg("status", "#2c3e50")
+        self.app.addLabel("status", "Готов", 7, 0, 2)
+        self.app.setLabelBg("status","#50372c")
         self.app.setLabelFg("status", "white")
         
         self.refresh_list()
+    
+    def show_db_history(self):
+        """Показать все задачи из БД"""
+        if conn:
+            try:
+                cursor.execute("SELECT id, title, description, completed, created_at FROM tasks ORDER BY id DESC LIMIT 10")
+                results = cursor.fetchall()
+                
+                if results:
+                    history = "Последние 10 задач из БД:\n\n"
+                    for row in results:
+                        status = "✓ Выполнена" if row[3] else "○ Не выполнена"
+                        history += f"ID:{row[0]} | {row[1]} | {status}\n"
+                        history += f"  Описание: {row[2] or 'Нет'}\n"
+                        history += f"  Создана: {row[4]}\n"
+                        history += "-" * 40 + "\n"
+                    self.app.infoBox("История из БД", history)
+                else:
+                    self.app.infoBox("История", "В БД нет задач")
+            except Exception as e:
+                self.app.infoBox("Ошибка", f"Ошибка: {e}")
+        else:
+            self.app.infoBox("Ошибка", "Нет подключения к БД")
     
     def set_status(self, text, color="green"):
         self.app.setLabel("status", text)
@@ -196,7 +253,7 @@ class ToDoApplication:
         self.app.setEntry("title_entry", "")
         self.app.setEntry("desc_entry", "")
         self.refresh_list()
-        self.set_status(f"Задача #{task_id} добавлена", "green")
+        self.set_status(f"Задача #{task_id} добавлена в БД", "green")
     
     def complete_task(self):
         task = self.get_selected_task()
@@ -217,12 +274,12 @@ class ToDoApplication:
         if self.app.yesNoBox("Подтверждение", f"Удалить задачу #{task.id}?"):
             self.task_manager.remove_task(task.id)
             self.refresh_list()
-            self.set_status(f"Задача #{task.id} удалена", "green")
+            self.set_status(f"Задача #{task.id} удалена из БД", "green")
     
     def run(self):
         self.app.go()
 
 # ====================== ЗАПУСК ======================
-if __name__ == "__main__":
-    app = ToDoApplication()
-    app.run()
+
+app = ToDoApplication()
+app.run()

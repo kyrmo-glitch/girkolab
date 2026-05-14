@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:15
-    container_name: postgres_db
+    container_name: postgresql_db
     environment:
       POSTGRES_DB: calculator_db
       POSTGRES_USER: user
