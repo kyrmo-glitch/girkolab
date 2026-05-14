@@ -69,8 +69,9 @@ python3 main.py
 
 
 **Список использованных истчников**
-()[https://metanit.com/python/tutorial/2.20.php]
-()[https://metanit.com/python/tutorial/2.21.php]
-()[https://python-academy.org/ru/guide/polymorphism]
+
+[](https://metanit.com/python/tutorial/2.20.php)
+[](https://metanit.com/python/tutorial/2.21.php)
+[](https://python-academy.org/ru/guide/polymorphism)
 
 
