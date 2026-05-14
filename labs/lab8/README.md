@@ -71,7 +71,9 @@ python3 main.py
 **Список использованных истчников**
 
 [except и обработка разных типов исключений](https://metanit.com/python/tutorial/2.20.php)
+
 [Генерация исключений и создание своих типов исключений](https://metanit.com/python/tutorial/2.21.php)
+
 [Полиморфизм](https://python-academy.org/ru/guide/polymorphism)
 
 
